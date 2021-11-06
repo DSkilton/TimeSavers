@@ -1,4 +1,4 @@
-# write a program to find the position of a given number
+ # write a program to find the position of a given number
 # in a list of numbers arranged in decreasing order. We #
 # also need to minimise the number of time we access elements
 # from the list.
@@ -25,15 +25,12 @@ def locate_card(cards, query):
     print('cards:', cards)
     print('query:', query)
 
-    while True:
+    while position < len(cards):
         print('position:', position)
         if cards[position] == query:
             return position
-
         position += 1
-
-        if position ==len(cards):
-            return -1
+    return -1
 
 result = locate_card(test['input']['cards'], test['input']['query'])
 print(result)
