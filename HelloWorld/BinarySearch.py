@@ -8,18 +8,33 @@
 # query: a number, who position in the array is to be determined
 
 #OUTPUT
-# position: the position of the var query in the list cards
+from jovian.pythondsa import evaluate_test_case
 
-cards = [13, 11, 10, 7, 4, 3, 1, 0]
-query = 7
-# TEST CASE
-output = 3
+# position: the position of the var query in the list cards
+test = {
+    'input': {
+        'cards': [13, 11, 10, 7, 4, 3, 1, 0],
+        'query': 7
+    },
+    'output': 7
+}
 
 def locate_card(cards, query):
-    #print(cards, query)
-    pass
+    position = 0
 
-result = locate_card(cards, query)
+    print('cards:', cards)
+    print('query:', query)
+
+    while True:
+        print('position:', position)
+        if cards[position] == query:
+            return position
+
+        position += 1
+
+        if position ==len(cards):
+            return -1
+
+result = locate_card(test['input']['cards'], test['input']['query'])
 print(result)
-
-print(result == output)
+evaluate_test_case(locate_card,test)
