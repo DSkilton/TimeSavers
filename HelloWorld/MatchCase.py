@@ -1,5 +1,3 @@
-import requests
-
 def http_error(status):
     match status:
         case 400:
@@ -13,4 +11,3 @@ def http_error(status):
 
 
 http_error(404)
-
