@@ -1,4 +1,4 @@
-def anangram_solution(s1, s2):
+def anagram_solution(s1, s2):
     s2_list = list(s2)
 
     pos1 = 0
@@ -23,4 +23,24 @@ def anangram_solution(s1, s2):
 
         return still_ok
 
-print(anangram_solution("cake", "kace"))
+print(anagram_solution("cake", "kace"))
+
+def anagram_solution2(s1, s2):
+    s1_list = list(s1)
+    s2_list = list(s2)
+
+    s1_list.sort()
+    s2_list.sort()
+
+    pos = 0
+    matches = True
+
+    while pos < len(s1) and matches:
+        if s1_list[pos] == s2_list[pos]:
+            pos = pos + 1
+        else:
+            matches = False
+
+    return matches
+
+print(anagram_solution2("cake", "kace"))
