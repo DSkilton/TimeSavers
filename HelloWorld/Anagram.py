@@ -47,6 +47,7 @@ print(anagram_solution2("cake", "kace"))
 
 def anagram_solution3(s1, s2):
 # This algorithm sacrifices space in order to gain speed
+# This is a linear order of magnitude solution
     c1 = [0] * 26
     c2 = [0] * 26
 
