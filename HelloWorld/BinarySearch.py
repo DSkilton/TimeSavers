@@ -1,5 +1,5 @@
- # write a program to find the position of a given number
-# in a list of numbers arranged in decreasing order. We #
+# write a program to find the position of a given number
+# in a list of numbers arranged in decreasing order. We
 # also need to minimise the number of time we access elements
 # from the list.
 
@@ -7,7 +7,7 @@
 # cards: a list of sorted numbers
 # query: a number, who position in the array is to be determined
 
-#OUTPUT
+# OUTPUT
 from jovian.pythondsa import evaluate_test_case
 
 # position: the position of the var query in the list cards
