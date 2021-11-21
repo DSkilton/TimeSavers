@@ -2,8 +2,34 @@
 # Import the Timer class defined in the module
 import timeit
 from timeit import Timer
-# If the above line is excluded, you need to replace Timer with
-# timeit.Timer when defining a Timer object
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plot_big_o():
+
+    # Stylesheets defined in Matplotlib
+    plt.style.use('bmh')
+
+    # Set up runtime comparisons
+    n = np.linspace(1, 50, 1000)
+    labels = ['Constant', 'Logarithmic', 'Linear']
+    big_o = [np.ones(n.shape), np.log(n), n]
+
+    # Plot setup
+    plt.figure(figsize=(12, 10))
+    plt.ylim(0, 50)
+
+    for i in range(len(big_o)):
+        plt.plot(n, big_o[i], label=labels[i])
+
+    plt.legend(loc=0)
+    plt.ylabel('Relative Runtime')
+    plt.xlabel('Input Size')
+    plt.savefig('big-o-notation.png')
+
+
+plot_big_o()
+
 
 def test1():
     list = []
