@@ -36,8 +36,10 @@ result = locate_card(test['input']['cards'], test['input']['query'])
 print(result)
 evaluate_test_case(locate_card,test)
 
+
+
 # x is the array position
-def binary_search(arr, low, high, x):
+def recursive_binary_search(arr, low, high, x):
     if high >= low:
         mid = (high + low) // 2
         # if element is found at the middle
@@ -47,19 +49,45 @@ def binary_search(arr, low, high, x):
         # if element is less than mid, it must be in left
         # sub-array
         elif arr[mid] > x:
-            return binary_search(arr, mid - 1, high, x)
+            return recursive_binary_search(arr, mid - 1, high, x)
 
         else:
-            return binary_search(arr, mid + 1, high, x)
+            return recursive_binary_search(arr, mid + 1, high, x)
     else:
         # if not found in the array
         return -1
 
-arr = [i for i in range(15)]
-print(arr)
+arr = [i for i in range(15000)]
+#print(arr)
 x = 14
 # Function call
-result = binary_search(arr, 0, len(arr) - 1, x)
+#result = recursive_binary_search(arr, 0, len(arr) - 1, x)
+#
+# if result != -1:
+#     print("Element is present at index", str(result))
+# else:
+#     print("Element is not present in array")
+
+def iterative_binary_search(arr, x):
+    low = 0
+    high = len(arr)-1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) // 2
+
+        if arr[mid] < x:
+            low = mid + 1
+
+        elif arr[mid] > x:
+            high = mid - 1
+
+        else:
+            return mid
+    return -1
+
+
+result = iterative_binary_search(arr, x)
 
 if result != -1:
     print("Element is present at index", str(result))
