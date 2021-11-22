@@ -35,3 +35,33 @@ def locate_card(cards, query):
 result = locate_card(test['input']['cards'], test['input']['query'])
 print(result)
 evaluate_test_case(locate_card,test)
+
+# x is the array position
+def binary_search(arr, low, high, x):
+    if high >= low:
+        mid = (high + low) // 2
+        # if element is found at the middle
+        if arr[mid] == x:
+            return mid
+
+        # if element is less than mid, it must be in left
+        # sub-array
+        elif arr[mid] > x:
+            return binary_search(arr, mid - 1, high, x)
+
+        else:
+            return binary_search(arr, mid + 1, high, x)
+    else:
+        # if not found in the array
+        return -1
+
+arr = [i for i in range(15)]
+print(arr)
+x = 14
+# Function call
+result = binary_search(arr, 0, len(arr) - 1, x)
+
+if result != -1:
+    print("Element is present at index", str(result))
+else:
+    print("Element is not present in array")
