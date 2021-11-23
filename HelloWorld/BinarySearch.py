@@ -58,10 +58,10 @@ def recursive_binary_search(arr, low, high, x):
         return -1
 
 arr = [i for i in range(15000)]
-#print(arr)
+# print(arr)
 x = 14
 # Function call
-#result = recursive_binary_search(arr, 0, len(arr) - 1, x)
+# result = recursive_binary_search(arr, 0, len(arr) - 1, x)
 #
 # if result != -1:
 #     print("Element is present at index", str(result))

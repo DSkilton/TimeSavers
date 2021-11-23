@@ -1,12 +1,15 @@
 import random
+
 fruits = ['orange', 'plum', 'banana', 'apple']
 
 
 def find(elements, value):
     while True:
-        random_element = random.choice(elements)
-        if random_element == value:
+        random_element = random.randint(0, len(fruits) - 1)
+        if elements[random_element] == value:
             return random_element
+        elif value not in elements:
+            return False
 
 
-find(fruits, "plum")
+print(find(fruits, "plum"))
