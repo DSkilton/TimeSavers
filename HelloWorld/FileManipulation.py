@@ -12,15 +12,11 @@ def createFile():
             file.write(str('\n'))
 
 
-
-createFile()
-
-
-def gamerScoreOpen():
+def gamerscore_open():
     file = open("gamerscore.csv", "r")  # opens file ready to use
     line = file.readline()  # stores a line in line
 
-    while (line):
+    while(line):
         data = line.split(",")  # seperates data into array
         print("Handle: ", data[0])  # printing array at index 0
         print("Gamescore: ", data[1])  # printing array at index 1

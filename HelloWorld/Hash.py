@@ -2,6 +2,28 @@ import hashlib
 import random
 import string
 
+crack_me = 'f76b61b962db075bb76ad6f3fab10f7bd546f92f1b89f18c513d4122575c18ac'
+
+
+def password_list():
+    with open("plainTextPass.txt", "r") as passwords:  # opens file ready to use
+        for password in passwords:
+            cleaned = password.strip()
+            # print(hash_function(password))
+            if crack_me == hash_function(cleaned):
+                print("Password: " + password)
+                break
+
+def hash_function(plaintext):
+    encoded_plaintext = plaintext.encode()
+    hashed = hashlib.sha256(encoded_plaintext).hexdigest()
+    # print("plaintext " + plaintext + " hash: " + hashed)
+    return hashed
+
+#hash_function("wolf\n")
+password_list()
+
+
 def tuple_dict():
     tuple_example = ("a", 2, "password", "Password")
 
@@ -16,26 +38,25 @@ def random_string(length):
 
 
 def generate_dict():
-    for i in range(100):
+    for i in range(1000000):
         print("'" + random_string(random.randint(1, 10)) + "'"
               + " : " + "'" + random_string(random.randint(1, 10)) + "', ")
 
+
 list = []
+
 
 def read_file():
     file = open('plainTextPass.txt', 'r')
 
     for x in file:
         line = file.readline()  # stores a line in line
+        # altered = line.join("!")
         bytes1 = line.encode()
         hashed = hashlib.sha256(bytes1).hexdigest()
         list.append(hashed)
 
     print(list)
-
-read_file()
-# e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-# sha256 = hashlib.sha256(bytes).hexdigest()
 
 
 dict = {'lbrst': 'tg', 'd': 'mnlx', 'udzsoa': 'pun',
