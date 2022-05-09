@@ -4,19 +4,23 @@ from tkinter import ttk #used to style the widgets
 # creating main tkinter window/toplevel
 login_frame = Tk()
 
-login_frame.geometry('215x100') # sets the size of the window
+login_frame.geometry('185x150') # sets the size of the window
 login_frame.title("Login Screen")  # set the title of the GUI window
 
 # this will create a label widget
 l1 = Label(login_frame, text="First:")
-l1.pack(side=LEFT)
+btn1 = Button(login_frame, text="Button")
+
+# grid method to arrange labels in respective
+# rows and columns as specified
+l1.grid(row=0, column=0, sticky=W, pady=2)
 
 # entry widgets, used to take entry from user
 e1 = Entry(login_frame)
-e1.pack(side=LEFT)
 
-btn1 = Button(login_frame, text="Button")
-btn1.pack(side=LEFT)
+# this will arrange entry widgets
+e1.grid(row=0, column=1, pady=2)
+btn1.grid(row=1, column= 1, sticky=W, pady=2)
 
 
 mainloop()
