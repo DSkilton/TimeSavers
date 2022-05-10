@@ -14,13 +14,15 @@ def password_list():
                 print("Password: " + password)
                 break
 
+
 def hash_function(plaintext):
     encoded_plaintext = plaintext.encode()
     hashed = hashlib.sha256(encoded_plaintext).hexdigest()
     # print("plaintext " + plaintext + " hash: " + hashed)
     return hashed
 
-#hash_function("wolf\n")
+
+# hash_function("wolf\n")
 password_list()
 
 

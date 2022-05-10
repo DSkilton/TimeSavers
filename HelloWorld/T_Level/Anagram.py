@@ -25,6 +25,7 @@ def anagram_solution(s1, s2):
 
 print(anagram_solution("cake", "kace"))
 
+
 def anagram_solution2(s1, s2):
     s1_list = list(s1)
     s2_list = list(s2)
@@ -44,6 +45,7 @@ def anagram_solution2(s1, s2):
     return matches
 
 print(anagram_solution2("cake", "kace"))
+
 
 def anagram_solution3(s1, s2):
 # This algorithm sacrifices space in order to gain speed

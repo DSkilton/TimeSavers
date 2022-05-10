@@ -1,6 +1,7 @@
 import csv
 import random
 
+
 def createFile():
     with open('textFile.txt', 'w') as file:
 

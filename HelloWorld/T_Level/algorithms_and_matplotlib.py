@@ -5,6 +5,7 @@ from timeit import Timer
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def plot_big_o():
 
     # Stylesheets defined in Matplotlib
@@ -36,13 +37,16 @@ def test1():
     for i in range (1000):
         list = list + [i]
 
+
 def test2():
     list = []
-    for i in range (1000):
+    for i in range(1000):
         list.append(i)
 
+
 def test3():
-    list = [i for i in range (1000)]
+    list = [i for i in range(1000)]
+
 
 def test4():
     list1 = list(range(1000))
@@ -56,6 +60,7 @@ t3 = Timer("test3()", "from __main__ import test3")
 print("comprehension ",t3.timeit(number=1000), "milliseconds")
 t4 = Timer("test4()", "from __main__ import test4")
 print("list range ",t4.timeit(number=1000), "milliseconds")
+
 
 def algorithm1():
     a = 5
