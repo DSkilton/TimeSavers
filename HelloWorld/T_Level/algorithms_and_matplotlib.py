@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 
 
 def plot_big_o():
-
     # Stylesheets defined in Matplotlib
     plt.style.use('bmh')
 
@@ -34,7 +33,7 @@ plot_big_o()
 
 def test1():
     list = []
-    for i in range (1000):
+    for i in range(1000):
         list = list + [i]
 
 
@@ -53,13 +52,13 @@ def test4():
 
 
 t1 = Timer("test1()", "from __main__ import test1")
-print("concat ",t1.timeit(number=1000), "milliseconds")
+print("concat ", t1.timeit(number=1000), "milliseconds")
 t2 = Timer("test2()", "from __main__ import test2")
-print("append ",t2.timeit(number=1000), "milliseconds")
+print("append ", t2.timeit(number=1000), "milliseconds")
 t3 = Timer("test3()", "from __main__ import test3")
-print("comprehension ",t3.timeit(number=1000), "milliseconds")
+print("comprehension ", t3.timeit(number=1000), "milliseconds")
 t4 = Timer("test4()", "from __main__ import test4")
-print("list range ",t4.timeit(number=1000), "milliseconds")
+print("list range ", t4.timeit(number=1000), "milliseconds")
 
 
 def algorithm1():
@@ -85,4 +84,3 @@ def algorithm1():
         print(w)
         print(v)
     d = 33
-
