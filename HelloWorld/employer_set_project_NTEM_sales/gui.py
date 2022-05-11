@@ -36,7 +36,7 @@ def login_form():
 
     # this will arrange the widgets
     lbl_banner.grid(row=0, column=0, columnspan=3, sticky=NS, pady=8)  # using columnspan to display text accross
-    lbl_username.grid(row=1, column=0, sticky=E, pady=2)               # multiple cols
+    lbl_username.grid(row=1, column=0, sticky=E, pady=2)  # multiple cols
     lbl_password.grid(row=2, column=0, sticky=E, pady=2)
     entry_username.grid(row=1, column=1, sticky=W, pady=2)
     entry_password.grid(row=2, column=1, sticky=W, pady=4)
@@ -48,6 +48,7 @@ def login_form():
 login_form()
 
 
+# Similar to above using pack
 def pack_layout():
     login_frame.geometry('185x150')  # sets the size of the window
     login_frame.title("Login Screen")  # set the title of the GUI window
