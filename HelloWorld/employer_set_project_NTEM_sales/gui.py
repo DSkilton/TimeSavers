@@ -1,12 +1,11 @@
 from tkinter import *
 
-# creating main tkinter window/toplevel
 global login_frame
 
 
 def login():
-    username = entry_username.get()
-    password = entry_password.get()
+    username = entry_username.get()  # this stores the values from login_form textvariable=entry_username
+    password = entry_password.get()  # this stores the values from login_form textvariable=entry_password
 
     if username == '' or password == '':
         label_message.set("Missing inputs")
@@ -18,29 +17,26 @@ def login():
 
 
 def login_form():
-    global entry_username
+    global entry_username  # using global var so info is accessible in login function
     global entry_password
     global label_message
 
     login_frame = Tk()
-
-    entry_username = StringVar()
+    entry_username = StringVar()  # StringVar() is a TKinter object used to manage Labels and Entrys
     entry_password = StringVar()
     label_message = StringVar()
 
-    # this will create a label widget
     lbl_banner = Label(login_frame, text="Please enter details below", bg="orange", fg="white")
-
     lbl_username = Label(login_frame, text="Username:")
     lbl_password = Label(login_frame, text="Password:")
     lbl_message = Label(login_frame, text=" ", textvariable=label_message)
     entry_username = Entry(login_frame, textvariable=entry_username)
     entry_password = Entry(login_frame, textvariable=entry_password, show="*")
-    btn_login = Button(login_frame, text="Button", command=login)
+    btn_login = Button(login_frame, text="Login", command=login)
 
     # this will arrange the widgets
-    lbl_banner.grid(row=0, column=0, columnspan=3, sticky=NS, pady=8)
-    lbl_username.grid(row=1, column=0, sticky=E, pady=2)
+    lbl_banner.grid(row=0, column=0, columnspan=3, sticky=NS, pady=8)  # using columnspan to display text accross
+    lbl_username.grid(row=1, column=0, sticky=E, pady=2)               # multiple cols
     lbl_password.grid(row=2, column=0, sticky=E, pady=2)
     entry_username.grid(row=1, column=1, sticky=W, pady=2)
     entry_password.grid(row=2, column=1, sticky=W, pady=4)
@@ -71,4 +67,3 @@ def pack_layout():
     e1.grid(row=0, column=1, pady=2)
     btn1.grid(row=1, column=1, sticky=W, pady=2)
     mainloop()
-
