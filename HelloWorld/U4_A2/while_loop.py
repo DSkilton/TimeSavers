@@ -3,16 +3,16 @@ players = 0
 menu_option = 0
 team_name = ""
 player_name = ""
-teams_list = []
+teams_list = ["test","anither","kastine"]
 
 
 def menu():
     menu_option = int(input("1. Add Player\t\t 2. Add Team \n"
-          "3. View Player\t\t 4. View Team \n"
-          "5. Delete Player\t 6. Delete Team \n"
-          "0. Exit"))
+                              "3. View Player\t\t 4. View Team \n"
+                              "5. Delete Player\t 6. Delete Team \n"
+                              "0. Exit"))
 
-menu()
+
 
 def select_option(menu_option):
     if menu_option == 1:
@@ -44,7 +44,13 @@ def add_players_to_teams():
             player_name = input("Enter a player name")
             list_string += "Player: " + player_name + " "
             j += 1
-
-
         teams_list.append(list_string)
 
+
+def view_teams():
+    for team in teams_list:
+        print(team)
+
+
+
+view_teams()
