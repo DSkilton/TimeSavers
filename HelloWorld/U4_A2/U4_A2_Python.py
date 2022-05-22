@@ -4,20 +4,22 @@ menu_option = 0
 team_name = ""
 player_name = ""
 teams_list = []
-individual_players_list = []
+individual_players_list = ["Duncan", "Mark", "Cher"]
 
 
 def menu():
     global menu_option
     menu_option = int(input("1. Add Player\t\t 2. Add Team \n"
                             "3. View Player\t\t 4. View Team \n"
-                            "5. Delete Player\t 6. Delete Team \n"
+                            "4. Delete Player\t\t 5. Delete Team \n"
+                            "6. Add Player Score\t 7. Add Team Score \n"
                             "0. Exit"))
 
 
 def select_option(menu_option):
     if menu_option == 1:
-        pass
+        add_player()
+
     elif menu_option == 2:
         add_players_to_teams()
 
@@ -33,6 +35,10 @@ def select_option(menu_option):
     elif menu_option == 5:
         pass
     elif menu_option == 6:
+        add_score_to_individual_players_list()
+    elif menu_option == 7:
+        pass
+    elif menu_option == 8:
         pass
     elif menu_option == 0:
         pass
@@ -42,13 +48,23 @@ def select_option(menu_option):
 
 
 def add_player():
-    player_name = input("Name to be added: ")
-    individual_players_list.append(player_name)
+    for j in range(1, 5):
+        player_name = input("Name to be added: ")
+        individual_players_list.append(player_name)
+        j += 1
 
 
 def view_player():
     for player in individual_players_list:
         print(player)
+
+
+def add_score_to_individual_players_list():
+    i = 0
+    for player in individual_players_list:
+        points = input("Enter points for " + player)
+        individual_players_list[i] += " " + points
+        i += 1
 
 
 def delete_player():
@@ -78,4 +94,4 @@ def delete_team():
     pass
 
 
-
+select_option(menu_option)
