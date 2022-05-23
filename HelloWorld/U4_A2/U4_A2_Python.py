@@ -44,7 +44,7 @@ def select_option(menu_option):
         pass
     else:
         print("Something went horribly wrong")
-    menu()
+        menu()
 
 
 def add_player():
@@ -60,15 +60,19 @@ def view_player():
 
 
 def add_score_to_individual_players_list():
-    i = 0
-    for player in individual_players_list:
+    i = 0 # i sets the position in the list, remember data structures start at 0 not 1
+    for player in individual_players_list: # for each player in the list, the following will run
         points = input("Enter points for " + player)
-        individual_players_list[i] += " " + points
-        i += 1
-
+        individual_players_list[i] += " " + points  # at position i, the points will be appended to player
+        i += 1                                      # i.e. on the first loop, it will update position 0
+                                                    # on the second loop it will update position 1
 
 def delete_player():
-    pass
+    i = 0
+    print("These are your current players")
+    for player in individual_players_list: # prints current list with a number next to it. The number is the player's index
+        print(i, ". ", player)             # with the end, we can pop elements out of the list 
+        i += 1
 
 
 def add_players_to_teams():
@@ -94,4 +98,5 @@ def delete_team():
     pass
 
 
-select_option(menu_option)
+# menu()
+delete_player()
