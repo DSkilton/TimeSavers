@@ -4,7 +4,7 @@ menu_option = 0
 team_name = ""
 player_name = ""
 teams_list = []
-individual_players_list = ["Duncan", "Mark", "Cher"]
+individual_players_list = ["Duncan", "Mark", "Cher", "Nic"]
 
 
 def menu():
@@ -33,15 +33,17 @@ def select_option(menu_option):
         view_teams()
 
     elif menu_option == 5:
-        pass
+        delete_team()
+
     elif menu_option == 6:
         add_score_to_individual_players_list()
+
     elif menu_option == 7:
-        pass
-    elif menu_option == 8:
-        pass
+        add_team_score_to_teams_list()
+
     elif menu_option == 0:
-        pass
+        exit()
+
     else:
         print("Something went horribly wrong")
         menu()
@@ -55,35 +57,41 @@ def add_player():
 
 
 def view_player():
+    i = 0
     for player in individual_players_list:
-        print(player)
+        print(i, ". ", player)
+        i += 1
 
 
 def add_score_to_individual_players_list():
-    i = 0 # i sets the position in the list, remember data structures start at 0 not 1
-    for player in individual_players_list: # for each player in the list, the following will run
+    i = 0  # i sets the position in the list, remember data structures start at 0 not 1
+    for player in individual_players_list:  # for each player in the list, the following will run
         points = input("Enter points for " + player)
         individual_players_list[i] += " " + points  # at position i, the points will be appended to player
-        i += 1                                      # i.e. on the first loop, it will update position 0
-                                                    # on the second loop it will update position 1
+        i += 1  # i.e. on the first loop, it will update position 0
+        # on the second loop it will update position 1
+
 
 def delete_player():
-    i = 0
     print("These are your current players")
-    for player in individual_players_list: # prints current list with a number next to it. The number is the player's index
-        print(i, ". ", player)             # with the end, we can pop elements out of the list 
-        i += 1
+    view_player()
+
+    player_index = int(input("Input the number of the player you would like to delete "))
+    individual_players_list.pop(player_index)
+
+    print("Your new list of players")
+    view_player()
 
 
 def add_players_to_teams():
     for i in range(1, 4):
         list_string = ""
-        team_name = input("Enter team name")
+        team_name = input("Enter team name ")
         list_string += "Team Name: " + team_name + " "
         i += 1
 
         for j in range(1, 5):
-            player_name = input("Enter a player name")
+            player_name = input("Enter a player name ")
             list_string += "Player: " + player_name + " "
             j += 1
         teams_list.append(list_string)
@@ -98,5 +106,8 @@ def delete_team():
     pass
 
 
+def add_team_score_to_teams_list():
+    pass
+
+
 # menu()
-delete_player()
