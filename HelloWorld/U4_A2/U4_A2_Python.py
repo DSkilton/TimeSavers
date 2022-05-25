@@ -3,8 +3,8 @@ players = 0
 menu_option = 0
 team_name = ""
 player_name = ""
-teams_list = []
-individual_players_list = ["Duncan", "Mark", "Cher", "Nic"]
+teams_list = ['Team Name: Team1 Player: Name1 Player: Name2 ', 'Team Name: Team2 Player: Name1 Player: Name2 ']
+individual_players_list = []
 
 
 def menu():
@@ -50,7 +50,7 @@ def select_option(menu_option):
 
 
 def add_player():
-    for j in range(1, 5):
+    for j in range(1, 20):
         player_name = input("Name to be added: ")
         individual_players_list.append(player_name)
         j += 1
@@ -84,13 +84,13 @@ def delete_player():
 
 
 def add_players_to_teams():
-    for i in range(1, 4):
+    for i in range(1, 3):
         list_string = ""
         team_name = input("Enter team name ")
         list_string += "Team Name: " + team_name + " "
         i += 1
 
-        for j in range(1, 5):
+        for j in range(1, 3):
             player_name = input("Enter a player name ")
             list_string += "Player: " + player_name + " "
             j += 1
@@ -98,12 +98,21 @@ def add_players_to_teams():
 
 
 def view_teams():
+    i = 0
     for team in teams_list:
-        print(team)
+        print(i, ". ", team)
+        i += 1
 
 
 def delete_team():
-    pass
+    print("These are your current teams")
+    view_teams()
+
+    team_index = int(input("Input the number of the team you would like to delete "))
+    teams_list.pop(team_index)
+
+    print("Your new list of players")
+    view_teams()
 
 
 def add_team_score_to_teams_list():
@@ -111,3 +120,4 @@ def add_team_score_to_teams_list():
 
 
 # menu()
+delete_team()
