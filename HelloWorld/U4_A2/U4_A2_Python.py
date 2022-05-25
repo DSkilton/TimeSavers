@@ -116,8 +116,16 @@ def delete_team():
 
 
 def add_team_score_to_teams_list():
-    pass
+    i = 0  # i sets the position in the list, remember data structures start at 0 not 1
+    for team in teams_list:  # for each player in the list, the following will run
+        prefix_trim = team.replace("Team Name: ", "")
+        suffix_trim = prefix_trim.replace(" Player: Name1 Player: Name2 ", "")
+        points = input("Enter points for " + suffix_trim)
+        teams_list[i] = points + " for team " + team  # at position i, the points will be appended to player
+        i += 1  # i.e. on the first loop, it will update position 0
+        # on the second loop it will update position 1
 
 
 # menu()
-delete_team()
+add_team_score_to_teams_list()
+print(teams_list)
