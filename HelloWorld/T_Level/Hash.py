@@ -2,29 +2,32 @@ import hashlib
 import random
 import string
 
-crack_me = 'f76b61b962db075bb76ad6f3fab10f7bd546f92f1b89f18c513d4122575c18ac'
-
+#crack_me = 'f76b61b962db075bb76ad6f3fab10f7bd546f92f1b89f18c513d4122575c18ac'
+crack_me = '3a0037fb8e017034a8cc645c4ad2addf179496a834362533461032f27635656e'
+count = 0
 
 def password_list():
-    with open("plainTextPass.txt", "r") as passwords:  # opens file ready to use
+    with open("plainTextPass.txt", "r") as passwords:  # opens file ready to 
         for password in passwords:
             cleaned = password.strip()
-            # print(hash_function(password))
+            #print(cleaned)
+            count + 1
+            #print(hash_function(cleaned))
             if crack_me == hash_function(cleaned):
                 print("Password: " + password)
                 break
-
+            
 
 def hash_function(plaintext):
     encoded_plaintext = plaintext.encode()
     hashed = hashlib.sha256(encoded_plaintext).hexdigest()
-    # print("plaintext " + plaintext + " hash: " + hashed)
+    #print("plaintext " + plaintext + " hash: " + hashed)
+    #print(plaintext + " : " + hashed)
     return hashed
 
-
+# password_list()
 # hash_function("wolf\n")
 password_list()
-
 
 def tuple_dict():
     tuple_example = ("a", 2, "password", "Password")
@@ -61,7 +64,9 @@ def read_file():
     print(list)
 
 
-dict = {'lbrst': 'tg', 'd': 'mnlx', 'udzsoa': 'pun',
+dict = {'lbrst': 'tg',
+        'd': 'mnlx',
+        'udzsoa': 'pun',
         'aad': 'dfjis',
         'rlvqljopne': 'jpxm',
         'pmhjgxqf': 'kqobyuaywh',

@@ -3,8 +3,16 @@ players = 0
 menu_option = 0
 team_name = ""
 player_name = ""
-teams_list = ['Team Name: Team1 Player: Name1 Player: Name2 ', 'Team Name: Team2 Player: Name1 Player: Name2 ']
+teams_list = []
 individual_players_list = []
+
+input("This is an example of an input")
+user_input = input("User input will be stored in the variable").lower()
+num_input = int(input("Enter a number"))
+str_input = str(input("Enter a letter, word or character")).upper()
+
+print(num_input)
+print(str_input, num_input, user_input)
 
 
 def menu():
@@ -121,11 +129,6 @@ def add_team_score_to_teams_list():
         prefix_trim = team.replace("Team Name: ", "")
         suffix_trim = prefix_trim.replace(" Player: Name1 Player: Name2 ", "")
         points = input("Enter points for " + suffix_trim)
-        teams_list[i] = points + " for team " + team  # at position i, the points will be appended to player
-        i += 1  # i.e. on the first loop, it will update position 0
-        # on the second loop it will update position 1
+        teams_list[i] = points + " for team " + team
+        i += 1
 
-
-# menu()
-add_team_score_to_teams_list()
-print(teams_list)
