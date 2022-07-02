@@ -29,11 +29,14 @@ def call_menu_option():
 
 
 def change_current_working_directory():
-    pass
+    new_working_directory = str(input("Below, paste the directory you would like to change to:"))
+    print(new_working_directory)
 
 
 def current_working_directory():
-    pass
+    cwd = os.getcwd()
+    print("Current working director is: {0}".format(cwd))
+    menu_options()
 
 
 menu_options()
