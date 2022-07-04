@@ -51,16 +51,17 @@ def bulk_operations_menu_match():
 
 
 def create_folders_from_list():
-    print(user_input)
+
     bulk_operations_menu()
-    print(user_input)
 
 
 def bulk_rename_folders():
+
     bulk_operations_menu()
 
 
 def bulk_rename_folders_and_sub_folders():
+
     bulk_operations_menu()
 
 
