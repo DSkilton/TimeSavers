@@ -3,8 +3,8 @@ import fnmatch
 import os
 from pathlib import Path
 import pandas as pd
-import MenuOptions
-import FolderOperations
+import menu_options
+import folder_operations
 
 
-MenuOptions.top_level_menu_options()
+menu_options.top_level_menu_options()

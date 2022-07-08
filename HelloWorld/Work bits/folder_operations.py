@@ -3,9 +3,9 @@ import os
 
 from win32com.client import Dispatch
 
-import MenuOptions
-import Validation
-import ViewAndChangeDirectory
+import menu_options
+import validation
+import view_and_change_directory
 
 
 def create_csv_file():

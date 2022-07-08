@@ -1,4 +1,4 @@
-import ViewAndChangeDirectory, FolderOperations
+import view_and_change_directory, folder_operations
 
 
 user_input = 0
