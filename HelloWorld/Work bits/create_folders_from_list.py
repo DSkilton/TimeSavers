@@ -1,6 +1,35 @@
+import csv
+import os
 
-# test data
-btec_lvl3_yr1 = ["Using Social Media in Business", "Programming", "Data Modelling", "Website Development"]
-btec_lvl3_network = ["IT Project Management", "Big Data and Business Analytics", "Enterprise of IT", "Enterprise of IT", "IT Technical Support", "The Internet of Things"]
+import course_details
+import folder_operations
 
-btec_assignments = 2
+
+def to_refactor():
+    name = ""
+    course = ""
+    list_of_names = []
+
+    with open("template_with_headers.csv", "r") as read_only:
+        csv_object = csv.reader(read_only)
+        next(csv_object)
+
+        for line in csv_object:
+            name = line[0]
+            list_of_names.append(name)
+            name += line[0]
+            course += line[1]
+
+            os.mkdir(course)
+            os.chdir(course)
+
+            for module in course_details.BTEC_LVL3_YR1:
+                os.mkdir(module)
+
+                for student_name in list_of_names:
+                    os.mkdir(student_name)
+
+
+
+
+to_refactor()

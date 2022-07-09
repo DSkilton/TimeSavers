@@ -53,7 +53,7 @@ def open_excel_and_csv_file():
     excel_application = Dispatch("Excel.Application")
     excel_application.Visible = True
 
-    workbook = excel_application.Workbooks.Open(r"" + ViewAndChangeDirectory.get_current_working_directory()
+    workbook = excel_application.Workbooks.Open(r"" + view_and_change_directory.get_current_working_directory()
                                                 .strip() + "\\template_with_headers.csv")
 
 
@@ -66,16 +66,16 @@ def add_header_to_csv_file():
 
     user_input = str(input("Use default headers?"))
 
-    if Validation.did_user_agree(user_input):
+    if validation.did_user_agree(user_input):
         print("adding headers")
         add_headers()
 
     user_input = str(input("header added. Would you like to open the file?"))
 
-    if Validation.did_user_agree(user_input):
+    if validation.did_user_agree(user_input):
         open_excel_and_csv_file()
 
-    MenuOptions.top_level_menu_options()
+    menu_options.top_level_menu_options()
 
 
 def create_folders_from_list():
@@ -87,7 +87,7 @@ def load_file_to_list():
         print("should be printing file")
         print(read_only.readline())
 
-    MenuOptions.bulk_operations_menu()
+    menu_options.bulk_operations_menu()
 
 
 def select_file():
@@ -113,8 +113,8 @@ def select_file():
 
 
 def bulk_rename_folders():
-    MenuOptions.bulk_operations_menu()
+    menu_options.bulk_operations_menu()
 
 
 def bulk_rename_folders_and_sub_folders():
-    MenuOptions.bulk_operations_menu()
+    menu_options.bulk_operations_menu()

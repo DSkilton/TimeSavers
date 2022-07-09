@@ -17,9 +17,9 @@ def top_level_menu_options():
 def top_level_menu_match():
     match user_input:
         case 1:
-            ViewAndChangeDirectory.current_working_directory()
+            view_and_change_directory.current_working_directory()
         case 2:
-            ViewAndChangeDirectory.change_current_working_directory()
+            view_and_change_directory.change_current_working_directory()
         case 3:
             bulk_operations_menu()
         case 0:
@@ -40,11 +40,11 @@ def bulk_operations_menu():
 def bulk_operations_menu_match():
     match user_input:
         case 1:
-            FolderOperations.create_folders_from_list()
+            folder_operations.create_folders_from_list()
         case 2:
-            FolderOperations.bulk_rename_folders()
+            folder_operations.bulk_rename_folders()
         case 3:
-            FolderOperations.bulk_rename_folders_and_sub_folders()
+            folder_operations.bulk_rename_folders_and_sub_folders()
         case 0:
             top_level_menu_options()
         case _:
