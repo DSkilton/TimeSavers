@@ -92,7 +92,11 @@ def bulk_rename_folders_and_sub_folders():
 
 def change_current_working_directory():
     new_working_directory = str(input("Below, paste the directory you would like to change to:"))
-    print("You have changed to:" + '"' + new_working_directory + '"')
+
+    if len(new_working_directory) == 0:
+        print("directory not changed")
+    else:
+        print("You have changed to:" + '"' + new_working_directory + '"')
     top_level_menu_options()
 
 
