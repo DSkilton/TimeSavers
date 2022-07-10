@@ -1,4 +1,4 @@
-import ViewAndChangeDirectory
+import ViewAndChangeDirectory, FolderOperations
 
 
 user_input = 0
@@ -40,11 +40,11 @@ def bulk_operations_menu():
 def bulk_operations_menu_match():
     match user_input:
         case 1:
-            create_folders_from_list()
+            FolderOperations.create_folders_from_list()
         case 2:
-            bulk_rename_folders()
+            FolderOperations.bulk_rename_folders()
         case 3:
-            bulk_rename_folders_and_sub_folders()
+            FolderOperations.bulk_rename_folders_and_sub_folders()
         case 0:
             top_level_menu_options()
         case _:

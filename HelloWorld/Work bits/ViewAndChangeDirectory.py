@@ -16,4 +16,3 @@ def current_working_directory():
     cwd = os.getcwd()
     print("Current working director is: {0}".format(cwd))
     MenuOptions.top_level_menu_options()
-    
