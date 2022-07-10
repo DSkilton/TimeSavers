@@ -1,3 +1,9 @@
+import ViewAndChangeDirectory
+
+
+user_input = 0
+
+
 def top_level_menu_options():
     global user_input
     user_input = int(input("What would you like to do?\n"
@@ -11,9 +17,9 @@ def top_level_menu_options():
 def top_level_menu_match():
     match user_input:
         case 1:
-            current_working_directory()
+            ViewAndChangeDirectory.current_working_directory()
         case 2:
-            change_current_working_directory()
+            ViewAndChangeDirectory.change_current_working_directory()
         case 3:
             bulk_operations_menu()
         case 0:

@@ -47,20 +47,7 @@ def bulk_rename_folders_and_sub_folders():
     MenuOptions.bulk_operations_menu()
 
 
-def change_current_working_directory():
-    new_working_directory = str(input("Below, paste the directory you would like to change to:"))
 
-    if len(new_working_directory) == 0:
-        print("directory not changed")
-    else:
-        print("You have changed to:" + '"' + new_working_directory + '"')
-    MenuOptions.top_level_menu_options()
-
-
-def current_working_directory():
-    cwd = os.getcwd()
-    print("Current working director is: {0}".format(cwd))
-    MenuOptions.top_level_menu_options()
 
 
 MenuOptions.top_level_menu_options()
