@@ -22,8 +22,8 @@ def check_if_headers_exist():
     # while line:
     print(line)
 
-    # this needs fixing, theows error
-    data = line.split(",")
+    for element in line:
+        data = element.split(",")
 
     if str(data[0]) == "Student name" and str(data[1]) == "Course name" and str(data[2]) == "Module names" and str(data[3]) == "Number of assignments":
         print("found headers")
