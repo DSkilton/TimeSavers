@@ -9,7 +9,7 @@ import ViewAndChangeDirectory
 
 
 def create_csv_file():
-    file = open("template_with_headers.csv", "a")
+    file = open("template_with_headers.csv", "w")
     return file
 
 
@@ -22,14 +22,15 @@ def check_if_headers_exist():
     # while line:
     print(line)
 
-    for element in line:
-        data = element.split(",")
+    if len(line) != 0:
+        for element in line:
+            data = element.split(",")
 
-    if str(data[0]) == "Student name" and str(data[1]) == "Course name" and str(data[2]) == "Module names" and str(data[3]) == "Number of assignments":
-        print("found headers")
-
-    # line = file.readline()
-    return data
+        if str(data[0]) == "Student name" and str(data[1]) == "Course name" and str(data[2]) == "Module names" and str(data[3]) == "Number of assignments":
+            print("found headers")
+            return True
+    else:
+        return False
 
 
 def add_headers():
@@ -38,11 +39,14 @@ def add_headers():
     create_csv_file()
     file = create_csv_file()
 
-    print("head" + str(check_if_headers_exist()))
+    if check_if_headers_exist():
+        print("headers exist " + str(check_if_headers_exist()))
 
-    # replace student name with nested list
-    writer = csv.writer(create_csv_file())
-    writer.writerow(header)
+    else:
+        # replace student name with nested list
+        writer = csv.writer(create_csv_file())
+        writer.writerow(header)
+        print("headers added to file")
 
 
 def open_excel_and_csv_file():
@@ -70,6 +74,8 @@ def add_header_to_csv_file():
 
     if Validation.did_user_agree(user_input):
         open_excel_and_csv_file()
+
+    MenuOptions.top_level_menu_options()
 
 
 def create_folders_from_list():
