@@ -2,7 +2,7 @@ import csv
 import random
 
 
-def createFile():
+def create_file():
     with open('textFile.txt', 'w') as file:
 
         for line in range(1000000):
