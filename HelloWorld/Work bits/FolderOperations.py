@@ -82,21 +82,34 @@ def create_folders_from_list():
     select_file()
 
 
+def load_file_to_list():
+    with open("template_with_headers.csv", "r") as read_only:
+        print("should be printing file")
+        print(read_only.readline())
+
+    MenuOptions.bulk_operations_menu()
+
+
 def select_file():
-    file_name = "template_with_headers.csv"
-    header = ("student name", "module name", "assignments")
 
-    for file in os.getcwd("."):
-        if os.path.isfile(ViewAndChangeDirectory.get_current_working_directory()
-                                  .strip() + "\\template_with_headers.csv.csv"):
-            print("found csv files, " + file)
-            break
+    # This needs to search the current directory for template_with_headers
+    # if it is found, load file into list
+    # if it is not found, create it and ask user if they want to open the file
+
+    # if the loaded information is correct, ask user to create folder structure for that student
+    # the course they are on will dictate what unit folders are created and which assignment folders
+
+    # last prompt is to ask user if they want to go to the new directories they created to
+     
+    if create_csv_file():
+        print("found file")
     else:
-        user_input = str(input("file does not exist, would you like it to be created?"))
-        Validation.did_user_agree(user_input)
+        create_csv_file()
+        print("file created")
 
-        if Validation.did_user_agree(user_input):
-            create_csv_file()
+    add_header_to_csv_file()
+    load_file_to_list()
+    print("finished function")
 
 
 def bulk_rename_folders():
