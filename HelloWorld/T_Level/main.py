@@ -3,23 +3,24 @@ from array import *
 import math
 
 import tkinter
-help(tkinter)
 
-import constant as cons
-
-PI = 3.14
-print(cons.PI)
-PI = 3.43
-
-print(cons.PI)
+# help(tkinter)
 
 
+def load_file_to_list():
+    file = open("emotions.txt", "r")
+    print(file.read(2))
 
-#write a program to find the position of a given number
+    print(file.read())
+
+
+
+load_file_to_list()
+
+# write a program to find the position of a given number
 # in a list of numbers arranged in decreasing order. We #
 # also need to minimise the number of time we access elements
 # from the list.
-
 
 
 #

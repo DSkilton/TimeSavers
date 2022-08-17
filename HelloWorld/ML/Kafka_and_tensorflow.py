@@ -12,3 +12,4 @@ import tensorflow_io as tfio
 
 print("tensorflow-io version: {}".format(tfio.__version__))
 print("tensorflow version: {}".format(tf.__version__))
+
